@@ -1,0 +1,48 @@
+body{
+    background: #ededed;
+}.mobile{
+    padding: 0;
+}
+.dashed-line{
+    border-bottom: 2px dashed blue;
+    width: 100%;
+    margin: 0;
+}
+.dash-contain{
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.circle{
+    width: 120px;
+    height: 120px;
+    border-radius: 200px;
+    background: blue;
+}
+.circle-right{
+    display: flex;
+    justify-content: center;
+}
+.circle-center{
+    display: flex;
+    justify-content: center;
+}
+.circle-left{
+    display: flex;
+    justify-content: center;
+}
+.circle-txt{
+    position: absolute;
+}
+@media only screen and (max-width:992px){
+    .dashed-line{
+        border-bottom: none;
+        border-left: 2px dashed blue;
+        height: 200px;
+        width: 0%;
+    }
+    .mobile{
+        display: flex;
+        justify-content: center;
+    }
+}

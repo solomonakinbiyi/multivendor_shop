@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fa0bcfb368.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+        }
+        #navdiv{
+            height: 70px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.781);
+            margin-bottom: 2%;
+            position: sticky;
+            top: 0;
+        }
+        #outerdiv{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #innerdiv{
+            width: 95%;
+            height: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #category{
+            width: 15%;
+            height: 300px;
+            background-color: white;
+            box-shadow: 1px 1px 10px rgba(209, 207, 207, 0.452);
+        }
+        #sresult{
+            width: 65%;
+            height: 80%;
+            background-color: white;
+            box-shadow: 1px 1px 10px rgba(209, 207, 207, 0.452);
+        }
+        #ad{
+            width: 16%;
+            height: 300px;
+            background-color: white;
+            box-shadow: 1px 1px 10px rgba(209, 207, 207, 0.452);
+            margin-top: 5%;
+        }
+        #footer{
+            background-color: rgb(121, 118, 118);
+            height: 400px;
+            margin-top: 2%;
+        }
+        .wholeline{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3%;
+        }
+        .divof2{
+            width: 49.8%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cards{
+            width: 48%;
+            height: 300px;
+            box-shadow: 1px 1px 10px rgba(192, 191, 191, 0.644);
+        }
+        .cimgdiv{
+            width: 100%;
+            height: 55%;
+        }
+        .cimg{
+            width: 100%;
+            height: 100%;
+        }
+        .cardpd{
+            padding-left: 20px;
+            padding-right: 20px;
+            /* font-size: 12px; */
+        }
+        .cardpd button{
+            width: 100%;
+            height: 30px;
+            background-color: gray;
+            border-style: solid;
+            color: white;
+            outline: none;
+        }
+        #filterouter{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #filterinner{
+            width: 61.7%;
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            height: 50px;
+            margin-bottom: 23px;
+            box-shadow: 1px 1px 10px rgba(192, 191, 191, 0.644);
+            padding-top: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+            box-sizing: border-box;
+        }
+        #filterinner button{
+            background-color: grey;
+            border-style: solid;
+            border-color: grey;
+            color: white;
+            outline: none;
+        }
+        #filterinner button:hover{
+            background-color: rgb(87, 86, 86);
+            border-color: rgb(87, 86, 86);
+        }
+        #divofcards{
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .price{
+            margin-bottom: 28px;
+        }
+        .formerp{
+            text-decoration: line-through;
+            color: red;
+        }
+        .currentp{
+            font-weight: bold;
+        }
+        .pdname{
+            font-size: 18px;
+            margin-bottom: 5px;
+            padding: 0px;
+        }
+        #pricefilter{
+            width: 30%;
+            height: 30px;
+            /* background-color: rgb(221, 18, 18); */
+        }
+        #rating{
+            width: 15%;
+            height: 30px;
+            display: flex;
+            margin-top: 3px;
+            /* background-color: rgb(238, 22, 22); */
+        }
+        #sort{
+            width: 30%;
+            height: 30px;
+            /* background-color: rgb(221, 18, 18); */
+        }
+        #pricefilter input{
+            width: 15%;
+        }
+        .checked{
+            font-size: 13px;
+            color: rgb(255, 136, 0);
+            margin-top: 3px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(77, 76, 76);
+            border-color: rgb(77, 76, 76);
+        }
+        @media (max-width: 1239px){
+            #ad{
+                height: 280px;
+            }
+            .cards{
+                height: 280px;
+            }
+            .price{
+                margin-bottom: 23px;
+            }
+        }
+        @media (max-width: 1193px){
+            #ad{
+                height: 260px;
+            }
+            .cards{
+                height: 265px;
+            }
+            .price{
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 1077px){
+            #ad{
+                height: 250px;
+            }
+            .cards{
+                height: 255px;
+            }
+            .price{
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: 1061px){
+            #pricefilter button{
+                width: 15%;
+            }
+            #pricefilter{
+                width: 33%;
+            }
+            #sort button{
+                width: 36%;
+            }
+            #sort{
+                width: 33%;
+            }
+        }
+        @media (max-width: 1009px){
+            #ad{
+                height: 235px;
+            }
+            .cards{
+                height: 240px;
+            }
+            .pdname{
+                margin-top: 5px;
+            }
+            #filterinner{
+                width: 70%;
+            }
+        }
+        @media (max-width: 947px){
+            #ad{
+                height: 220px;
+            }
+            .cards{
+                height: 225px;
+            }
+        }
+        @media (max-width: 897px){
+            #ad{
+                height: 210px;
+            }
+            .cimgdiv{
+                height: 50%;
+            }
+            .cards{
+                height: 220px;
+            }
+            #filterinner{
+                width: 75%;
+            }
+        }
+        @media (max-width: 855px){
+            #ad{
+                height: 210px;
+                width: 18%;
+                margin-top: 15%;
+            }
+            .cards{
+                height: 220px;
+            }
+            #category{
+                display: none;
+            }
+            #sresult{
+                width: 80%;
+            }
+        }
+        @media (max-width: 843px){
+            #filterinner{
+                width: 80%;
+            }
+        }
+        @media (max-width: 799px){
+            #ad{
+                height: 205px;
+            }
+            #filterinner{
+                width: 85%;
+            }
+        }
+        @media (max-width: 781px){
+            #ad{
+                height: 190px;
+            }
+        }
+        @media (max-width: 745px){
+            #ad{
+                height: 185px;
+            }
+            .cards{
+                height: 210px;
+            }
+            .price{
+                margin-bottom: 10px;
+            }
+            #filterinner{
+                width: 90%;
+            }
+        }
+        @media (max-width: 707px){
+            #ad{
+                height: 180px;
+            }
+            .cards{
+                height: 205px;
+            }
+            .price{
+                margin-bottom: 10px;
+            }
+            .cimgdiv{
+                height: 54%;
+            }
+            #filterinner{
+                width: 95%;
+            }
+            .cardpd{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        @media (max-width: 667px){
+            #ad{
+                display: none;
+            }
+            #sresult{
+                width: 100%;
+            }
+            #filterinner{
+                width: 100%;
+            }
+        }
+        @media (max-width: 633px){
+            /* #pricefilter{
+                display: none;
+            }
+            #sort{
+                display: none;
+            }
+            #rating{
+                display: none;
+            } */
+        }
+        @media (max-width: 581px){
+            .wholeline{
+                flex-direction: column;
+            }
+            .divof2{
+                width: 100%;
+                margin-bottom: 3%;
+            }
+            .cards{
+                height: 280px;
+            }
+            .cimgdiv{
+                height: 60%;
+            }
+            .wholeline{
+                margin-bottom: 0;
+            }
+        }
+        @media (max-width: 461px){
+            .cards{
+                height: 265px;
+            }
+        }
+        @media (max-width: 432px){
+            .cards{
+                height: 250px;
+            }
+        }
+        @media (max-width: 411px){
+            .cards{
+                height: 250px;
+            }
+            .cimgdiv{
+                height: 55%;
+            }
+        }
+        @media (max-width: 384px){
+            .cards{
+                height: 240px;
+            }
+        }
+        @media (max-width: 357px){
+            .cards{
+                height: 230px;
+            }
+            .cimgdiv{
+                height: 53%;
+            }
+        }
+        @media (max-width: 338px){
+            .cards{
+                height: 220px;
+            }
+        }
+        @media (max-width: 320px){
+            .cards{
+                height: 210px;
+            }
+        }@media (max-width: 300px){
+            .cards{
+                height: 210px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navdiv"></div>
+    <div id="filterouter">
+        <div id="filterinner">
+            <div id="pricefilter">
+                <span>Price(ngn)</span> <input type="number"> <span>-</span> <input type="number"> <button>OK</button>
+                <!-- <span>Sort by:</span> <button>Low Price</button> <button>High Price</button> -->
+            </div>
+            <div id="sort"><span>Sort by:</span> <button>Low Price</button> <button>High Price</button></div>
+            <div id="rating">
+                <input type="checkbox"> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i>
+            </div>
+        </div>
+    </div>
+    <div id="outerdiv">
+        <div id="innerdiv">
+            <div id="category"></div>
+            <div id="sresult">
+                <div id="divofcards">
+                    <div class="wholeline">
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="roseg.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="amelia.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="maize5.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="luna.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wholeline">
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="roseg.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="amelia.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="maize5.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="luna.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wholeline">
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="roseg.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="amelia.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divof2">
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="maize5.jpg" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="cards">
+                                <div class="cimgdiv">
+                                    <img class="cimg" src="luna.webp" alt="">
+                                </div>
+                                <div class="cardpd">
+                                    <p class="pdname">shoe</p>
+                                    <div class="price"> 
+                                        <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div id="ad">
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

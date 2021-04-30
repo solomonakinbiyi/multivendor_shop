@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #outerwhole{
+            width: 100%;
+            height: 100%;
+            /* background-color: orange; */
+        }
+        #innerwhole{
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+        #leftdiv{
+            width: 35%;
+            /* background-color: rgba(128, 128, 128, 0.767); */
+            background-image: url(cart.jpg);
+            background-position: 100%;
+            background-blend-mode: multiply;
+            background-color: rgba(128, 128, 128, 0.459);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        #rigtdiv{
+            width: 65%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #innerright{
+            width: 40%;
+            padding-top: 130px;
+            box-sizing: border-box;
+        }
+        .inputdiv{
+            position: relative;
+            height: 40px;
+            margin-bottom: 5%;
+            display: flex;
+            justify-content: center;
+        }
+        .name{
+            position: absolute;
+            top: 30%;
+            left: 30px;
+            color: rgb(151, 150, 150);
+            padding: 0 5px 0 5px;
+        }
+        .inputtext{
+            height: 90%;
+            width: 100%;
+            padding-left: 20px;
+            border-radius: 10px;
+            outline: none;
+            border: thin solid gray;
+        }
+        .inputtext:focus + .name{
+            top: -10px;
+            left: 50px;
+            transition: 0.5s;
+            font-size: large;
+            color: black;
+            background-color: white;
+        }
+        #lastdiv{
+            text-align: center;
+        }
+        #buttondiv{
+            display: flex;
+            justify-content: center;
+        }
+        #loginbutton{
+            height: 40px;
+            width: 50%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            background-color: grey;
+            color: white;
+            border: solid;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        #loginbutton:hover{
+            cursor: pointer;
+            background-color: rgb(88, 87, 87);
+            outline: none;
+        }
+        .underline{
+            color: black;
+            text-decoration-line: none;
+        }
+        .underline:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #invalid{
+            color: red;
+            text-align: center;
+        }
+        @media(max-width: 1166px){
+            #innerright{
+            width: 50%;
+            }
+        }
+        @media(max-width: 966px){
+            #innerright{
+            width: 60%;
+            }
+        }
+        @media(max-width: 804px){
+            #innerright{
+            width: 70%;
+            }
+        }
+        @media(max-width: 794px){
+            #innerright{
+                width: 50%;
+                padding-top: 0px;
+            }
+            #leftdiv{
+                display: none;
+            }
+            body{
+                background-image: url(cart.jpg);
+                background-size: cover;
+                background-color: rgba(0, 0, 0, 0.26);
+                background-position: center;
+                background-blend-mode: multiply;
+            }
+            #rigtdiv{
+                width: 100%;
+                background-position: 100%;
+                background-blend-mode: multiply;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+            .inputtext{
+                border-color: white;
+            }
+            /* *{
+                color: white;
+            } */
+            #loginbutton{
+                border: 1px;
+                background-color: grey;
+            }
+            .underline:hover{
+                text-decoration: underline white;
+                cursor: pointer;
+            }
+            .inputtext:focus + .name{
+                color: black;
+                background-color: rgba(255, 255, 255, 0.644);
+            }
+            #invalid{
+                color: rgb(240, 222, 222);
+                padding: 5px 0;
+                background-color: red;
+            }
+            #innerright h1{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+            span{
+                color: white;
+            }
+        }
+        @media(max-width: 620px){
+            #innerright{
+                width: 60%;
+            }
+        }
+        @media(max-width: 552px){
+            #innerright{
+                width: 70%;
+            }
+        }
+        @media(max-width: 454px){
+            #innerright{
+                width: 80%;
+            }
+        }
+        @media(max-width: 480px){
+            #buttondiv{
+                margin-top: 5%;
+            }
+            .inputdiv{
+                margin-bottom: 10%;
+            }
+            #innerwhole{
+                height: 100%;
+                box-sizing: border-box;
+            }
+            #innerright{
+            padding-top: 50px;
+            height: 100%;
+            box-sizing: border-box;
+            }
+            #innerwhole{
+                height: 100%;
+            }
+            #innerright h1{
+                margin-bottom: 50px;
+            }
+            #rigtdiv{
+                height: 100%;
+            }
+            #leftdiv{
+                height: 100%;
+            }
+        }
+        @media(max-width: 394px){
+            #innerright{
+                width: 90%;
+            }
+        }
+        @media(max-width: 340px){
+            #innerright{
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="outerwhole">
+        <div id="innerwhole">
+            <div id="leftdiv"></div>
+            <div id="rigtdiv">
+                <div id="innerright">
+                    <div style="text-align: center;">
+                        <h1>Sign In</h1>
+                    </div>
+                    
+                    <div style="color: gray; text-align: center; font-size: 15px;">
+                        <p>Lorem ipsum dolor, sit amet con</p>
+                    </div>
+                    <div class="inputdiv">
+                        <input class="inputtext" id="input1" type="text" placeholder="Email or phonenumber" required>
+                        <!-- <span class="name">Email or phonenumber</span> -->
+                    </div>
+                    <div class="inputdiv">
+                        <input class="inputtext" type="password" placeholder="Password" required>
+                        <!-- <span class="name">Password</span> -->
+                    </div>
+                    <div id="invalid">Your credentials are invalid</div>
+                    <div id="remme" style="display: flex; align-items: center;justify-content: space-between;">
+                        <div><input type="checkbox" name="agree" value="remeber"><span> Remember me</span></div>
+                        <a class="underline" href=""><p>Forgot your password?</p></a>
+                    </div>
+                    <div id="buttondiv">
+                        <button id="loginbutton">Login</button>
+                    </div>
+                    <div id="lastdiv">
+                        <a class="underline" href=""><p>Read our terms</p></a>
+                        <a class="underline" href=""><p>Create an account</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

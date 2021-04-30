@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fa0bcfb368.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+    <script src='jquery-1.8.3.min.js'></script>
+	<script src='jquery.elevatezoom.js'></script>
+    <style>
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            background-color: whitesmoke;
+            /* padding: 0 100px 0 100px; */
+            margin: 0;
+        }
+        #outerdiv{
+            display: flex;
+            justify-content: center;
+        }
+        #firstwhole{
+            display: flex;
+            width: 80%;
+            background-color: white;
+            height: 80%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            /* padding: 0 100px 0 100px; */
+            /* padding-left: 1%; */
+            justify-content: space-around;
+            box-shadow: 0px 0px 30px rgb(221, 221, 221);
+        }
+        #rightdiv{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+        #wholelittlediv{
+            width: 9%;
+        }
+        #mainimgdiv{
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid rgb(206, 204, 204);
+            padding-top: 1px;
+            padding-bottom: 1px;
+            position: relative;
+        }
+        .littleimgdiv{
+            height: 110px;
+            margin-bottom: 13%;
+            border: 1px solid rgb(206, 204, 204);
+            padding: 1px;
+        }
+        .littleimgdiv:hover{
+            cursor: pointer;
+            border: 2px solid rgb(121, 118, 118);
+        }
+        .liitleimg{
+            width: 100%;
+            height: 100%;
+        }
+        #mainimg{
+            width: 75%;
+            height: 100%;
+        }
+        #productinfo{
+            width: 38%;
+            background-color: rgb(238, 238, 238);
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0px 0px 5px rgb(196, 196, 196);
+        }
+        .circle{
+            height: 23px;
+            width: 7%;
+            border-radius: 20px;
+            border: none;
+            margin-right: 3%;
+            outline: none;
+            transition: 2s;
+            background-color: rgb(150, 148, 148);
+        }
+        .size{
+            height: 30px;
+            width: 10%;
+            margin-right: 3%;
+            border: none;
+            outline: none;
+            background-color: rgb(175, 174, 174);
+            color: white;
+        }
+        #navdiv{
+            height: 70px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.781);
+            margin-bottom: 2%;
+            position: sticky;
+            top: 0;
+        }
+        #productdet{
+            background-color: white;
+            padding: 10px 10px 10px 10px;
+            box-sizing: border-box;
+            width: 90%;
+            box-shadow: 0px 0px 30px rgb(221, 221, 221);
+        }
+        #orderbutton{
+            width: 100%;
+            margin-bottom: 3%;
+            height: 40px;
+            background-color: rgb(121, 118, 118);
+            color: white;
+            border-style: solid;
+            border-color: rgb(121, 118, 118);
+            font-weight: bolder;
+            font-size: 15px;
+        }
+        #fmiddlediv{
+            width: 50%;
+        }
+        #outerpd{
+            display: flex;
+            justify-content: center;
+            padding-top: 3%;
+        }
+        #outerse{
+            display: flex;
+            justify-content: center;
+            padding-top: 3%;
+            padding-bottom: 3%;
+        }
+        #innerse{
+            background-color: white;
+            padding: 10px 10px 10px 10px;
+            box-sizing: border-box;
+            width: 90%;
+            box-shadow: 0px 0px 30px rgb(221, 221, 221);
+        }
+        #innerse h2{
+            padding-left: 10%;
+            margin-bottom: 3%;
+        }
+        #wholecarddiv{
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        .alsoseline{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2%;
+        }
+        .divof2{
+            display: flex;
+            justify-content: space-between;
+            width: 49%;
+        }
+        .card{
+            width: 48%;
+            height: 300px;
+            box-shadow: 1px 1px 10px rgba(209, 207, 207, 0.452);
+            padding-bottom: 20px;
+            /* font-size: 14px; */
+            
+        }
+        .pdname{
+            font-size: 18px;
+            margin-bottom: 5px;
+            padding: 0px;
+        }
+        #footer{
+            background-color: rgb(121, 118, 118);
+            height: 400px;
+            margin-top: 2%;
+        }
+        .checked{
+            font-size: small;
+            color: gray;
+        }
+        #quanbox{
+            width: 10%;
+            outline: none;
+        }
+        .innercard{
+            width: 100%;
+            height: 60%;
+            /* display: flex;
+            justify-content: center; */
+        }
+        .cardimg{
+            width: 100%;
+            height: 100%;
+        }
+        .img-magnifier-glass {
+            position: absolute;
+            border: 3px solid rgb(65, 63, 63);
+            border-radius: 50%;
+            cursor: none;
+            /*Set the size of the magnifier glass:*/
+            width: 200px;
+            height: 200px;
+        }
+        .img-magnifier-glass:hover{
+            visibility: visible;
+        }
+        .img-magnifier-glass:not(:hover){
+            opacity: 0.0;
+        }
+        #outerad{
+            display: flex;
+            justify-content: center;
+            padding-top: 1%;
+        }
+        #innerad{
+            width: 80%;
+            height: 300px;
+            background-color: white;
+            /* box-shadow: 0px 0px 5px rgb(196, 196, 196); */
+            border: 1px solid rgb(226, 225, 225);
+        }
+        .cardpd{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .cardpd button{
+            width: 100%;
+            height: 30px;
+            background-color: gray;
+            border-style: solid;
+            color: white;
+        }
+        .price{
+            margin-bottom: 28px;
+        }
+        .formerp{
+            text-decoration: line-through;
+            color: red;
+        }
+        .currentp{
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // function magnify(imgID, zoom) {
+        //   var img, glass, w, h, bw;
+        //   img = document.getElementById(imgID);
+        //   glass = document.createElement("DIV");
+        //   glass.setAttribute("class", "img-magnifier-glass");
+        //   img.parentElement.insertBefore(glass, img);
+        //   glass.style.backgroundImage = "url('" + img.src + "')";
+        //   glass.style.backgroundRepeat = "no-repeat";
+        //   glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+        //   bw = 3;
+        //   w = glass.offsetWidth / 2;
+        //   h = glass.offsetHeight / 2;
+        //   glass.addEventListener("mousemove", moveMagnifier);
+        //   img.addEventListener("mousemove", moveMagnifier);
+        //   glass.addEventListener("touchmove", moveMagnifier);
+        //   img.addEventListener("touchmove", moveMagnifier);
+        //   function moveMagnifier(e) {
+        //     var pos, x, y;
+        //     e.preventDefault();
+        //     pos = getCursorPos(e);
+        //     x = pos.x;
+        //     y = pos.y;
+        //     if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+        //     if (x < w / zoom) {x = w / zoom;}
+        //     if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+        //     if (y < h / zoom) {y = h / zoom;}
+        //     glass.style.left = (x - w) + "px";
+        //     glass.style.top = (y - h) + "px";
+        //     glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+        //   }
+        //   function getCursorPos(e) {
+        //     var a, x = 0, y = 0;
+        //     e = e || window.event;
+        //     a = img.getBoundingClientRect();
+        //     x = e.pageX - a.left;
+        //     y = e.pageY - a.top;
+        //     x = x - window.pageXOffset;
+        //     y = y - window.pageYOffset;
+        //     return {x : x, y : y};
+        //   }
+        // }
+        function firstimage(){
+            document.getElementById("mainimg").src = "item1.jpg";
+        }
+        function secondimage(){
+            document.getElementById("mainimg").src = "DD921696_01.jpg";
+        }
+        function thirdimage(){
+            document.getElementById("mainimg").src = "DD921696_03.jpg";
+        }
+        function fourthimage(){
+            document.getElementById("mainimg").src = "DD921696_01.jpg";
+        }
+    </script>
+    <!-- <script>
+        $(document).ready(function(){
+          $('#mainimg')
+          .wrap('<span style="display:inline-block"></span>')
+          .css('display', 'block')
+          .parent()
+          .zoom({
+            url: $(this).find('img').attr('data-zoom')
+          });
+        });
+      </script> -->
+</head>
+<body>
+    <div id="navdiv"></div>
+    <div id="outerdiv">
+        <div id="firstwhole">
+            <div id="wholelittlediv">
+                <div class="littleimgdiv">
+                    <img class="liitleimg" onclick="firstimage()" src="item1.jpg" alt="">
+                </div>
+                <div class="littleimgdiv">
+                    <img class="liitleimg" onclick="secondimage()" src="DD921696_01.jpg" alt="">
+                </div>
+                <div class="littleimgdiv">
+                    <img class="liitleimg" onclick="thirdimage()" src="DD921696_03.jpg" alt="">
+                </div>
+                <div class="littleimgdiv">
+                    <img class="liitleimg" onclick="fourthimage()" src="DD921696_01.jpg" alt="">
+                </div>
+            </div>
+            <div id="rightdiv">
+                <div id="fmiddlediv">
+                    <div id="mainimgdiv">
+                        <img id="mainimg" src="item1.jpg" alt="">
+                    </div>
+                    <h3>Maxi Dress</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totamjfjd doloremque, ad archi</p>
+                </div>
+                <div id="productinfo">
+                    <p><i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i> <i class="fas fa-star checked"></i></p>
+                    <h2 style="font-weight: lighter;">$10.00</h2>
+                    <p>Color:</p>
+                    <button class="circle"></button> <button class="circle"></button> <button class="circle"></button><br>
+                    <p>Size:</p>
+                    <button class="size">S</button> <button class="size">M</button> <button class="size">L</button> <button class="size">XL</button><br>
+                    <br>
+                    <span><label for="">Quantity: </label></span><input id="quanbox" type="number">
+                    <br>
+                    <br>
+                    <p>Total: <span>$10.00</span></p>
+                    <button id="orderbutton"><i class="fas fa-cart-plus"></i> Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="outerpd">
+        <div id="productdet">
+            <h2>Product Detail</h2>
+            <p><b>product</b></p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sint quia accusamus excepturi unde quis impedit libero, doloribus commodi nesciunt velit laudantium optio sapiente nulla aliquid amet tempora quisquam similique.</p>
+            <hr>
+            <p><b>product</b></p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sint quia accusamus excepturi unde quis impedit libero, doloribus commodi nesciunt velit laudantium optio sapiente nulla aliquid amet tempora quisquam similique.</p>
+            <hr>
+            <p><b>product</b></p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sint quia accusamus excepturi unde quis impedit libero, doloribus commodi nesciunt velit laudantium optio sapiente nulla aliquid amet tempora quisquam similique.</p>
+        </div>
+    </div>
+    <div id="outerse">
+        <div id="innerse">
+            <h2>People also searched</h2>
+            <div id="wholecarddiv">
+                <div class="alsoseline">
+                    <div class="divof2">
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://d3re0f381bckq9.cloudfront.net/49864202_img-20200804-wa0006_868x868.jpg" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_3.0,f_auto,w_500/5184208_png/attract-round-ring--white--rose-gold-tone-plated-swarovski-5184208.png" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divof2">
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://pyxis.nymag.com/v1/imgs/913/fbd/cb4d308f738e90c7136af95da6d46fff71-a-new-day-02-.rsquare.w600.jpg" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://media.gettyimages.com/photos/elegant-black-leather-shoes-picture-id172417586?s=612x612" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alsoseline">
+                    <div class="divof2">
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://images-na.ssl-images-amazon.com/images/I/71PtbKQvcDL._AC_UY395_.jpg" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://keeshoes.com/a/ale/auction_image/image1_35335.s2000/elegant-red-ladies-shoes-nf-23p-red-2000x2000.jpeg?_=1607298750.0746026" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divof2">
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://images-na.ssl-images-amazon.com/images/I/91thDbx437L._UL1500_.jpg" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="innercard">
+                                <img class="cardimg" src="https://sc04.alicdn.com/kf/HTB1kay7aFLM8KJjSZFBq6xJHVXa1.jpg" alt="">
+                            </div>
+                            <div class="cardpd">
+                                <p class="pdname">shoe</p>
+                                <div class="price"> 
+                                    <span class="currentp">$15</span>&nbsp;&nbsp;<span class="formerp">$15</span>
+                                </div>
+                                <button>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="outerad">
+        <div id="innerad"></div>
+    </div>
+    <div id="footer"></div>
+    <script>
+        magnify("mainimg", 3);
+    </script>
+
+    
+</body>
+</html>
