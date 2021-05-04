@@ -13,6 +13,7 @@ body{
     display: flex;
     align-items: center;
     padding: 0;
+    height: 120px;
 }
 .circle{
     width: 120px;
@@ -20,22 +21,25 @@ body{
     border-radius: 200px;
     background: blue;
 }
-.circle-right{
-    display: flex;
-    justify-content: center;
-}
 .circle-center{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-.circle-left{
-    display: flex;
-    justify-content: center;
+.circle-text{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.circle-txt{
-    position: absolute;
+.deliv-time{
+    margin: 0;
+}
+.deliv-note{
+    margin: 0;
 }
 @media only screen and (max-width:992px){
+    .dash-contain{
+        height: 220px;
+    }
     .dashed-line{
         border-bottom: none;
         border-left: 2px dashed blue;
