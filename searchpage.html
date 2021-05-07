@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/fa0bcfb368.js" crossorigin="anonymous"></script>
     <style>
         *{
@@ -15,7 +17,7 @@
             margin: 0;
             background-color: whitesmoke;
         }
-        #navdiv{
+        .navdiv{
             height: 70px;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.781);
@@ -34,7 +36,7 @@
             display: flex;
             justify-content: space-between;
         }
-        #category{
+        #category-displayer{
             width: 15%;
             height: 300px;
             background-color: white;
@@ -266,7 +268,7 @@
             .cards{
                 height: 220px;
             }
-            #category{
+            #category-displayer{
                 display: none;
             }
             #sresult{
@@ -414,8 +416,64 @@
 
     </style>
 </head>
-<body>
-    <div id="navdiv"></div>
+<body id="body">
+    <header class="header navbar-div">
+        <div>
+            <button class="header-btn" id="btn-nav" type="button">
+                <i class="bi-list"></i>
+            </button>
+            <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+        <div class="links">
+            <ul>
+                <li>
+                  <a class="link-child" href="#"><i class="bi-person"></i><span class="link-off"> Login</span></a>
+                </li>
+                <li>
+                    <a class="link-child" href="#"><i class="bi-question-circle"></i><span class="link-off"> New To Shop</span></a>
+                </li>
+                <li>
+                    <a class="link-child" href="#"><i class="bi-cart3"></i><span class="link-off"> Cart</span></a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <nav class="nav">
+        <div class="nav-links" id="side-cat">
+            <a class="navbar-brand slide-logo" href="#" style="margin-left: 10%;">LOGO</a>
+            <button class="cancel" id="cancel-btn" type="button">
+                <i class="bi-x"></i>
+            </button>
+            <div class="categories-hide">
+                <div class="scroll-div">
+                    <div class="scroll-object">
+                        <a href="category.html" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                        <a href="#" class="category2"><i class="bi-tag"> </i><span class="category-text">&nbsp;Category</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="nav-overlay" id="side-overlay"></div>
+    </nav>
+    
     <div id="filterouter">
         <div id="filterinner">
             <div id="pricefilter">
@@ -430,9 +488,23 @@
     </div>
     <div id="outerdiv">
         <div id="innerdiv">
-            <div id="category"></div>
+            <div id="category-displayer">
+                <div class="categories">
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a href="#" class="category"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                    <a class="category" id="more-category-ctrl"><i class="bi-tag"> </i><span class="catergory-text">&nbsp;Category</span></a>
+                </div>
+            </div>
             <div id="sresult">
                 <div id="divofcards">
+                    <div class="search-bar">
+                        <input type="text" id="input-search" placeholder="Search Item">
+                        <div id="search-btn">Search</div>
+                    </div>
                     <div class="wholeline">
                         <div class="divof2">
                             <div class="cards">
@@ -602,6 +674,9 @@
             </div>
         </div>
     </div>
+
     <div id="footer"></div>
+    <script src="js/main.js"></script>
+    <script src="jquery/jqueryv3.4.1.js"></script>
 </body>
 </html>
