@@ -29,18 +29,21 @@ body{
     font-size: .8em;
     text-align: center;
 }
-.closed-order-switch{
+/* .closed-order-switch{
     font-size: .8em;
     text-align: center;
-}
+} */
 .order-switch:nth-child(1){
     border-bottom: 2px solid orange;
     color: orange;
 }
-.closed-order-switch:nth-child(2){
+.order-switch:nth-child(2):hover{
+    border-bottom: 2px solid #acacac;
+}
+/* .closed-order-switch:nth-child(2){
     border-bottom: 2px solid orange;
     color: orange;
-}
+} */
 .see-detail{
     color: orange;
 }
@@ -52,6 +55,9 @@ body{
 }
 .switch-link:hover{
     color: orange;
+}
+.link-contain-active{
+    background-color: #ededed;
 }
 @media only screen and (max-width: 990px){
     .turn-off{

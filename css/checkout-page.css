@@ -1,0 +1,45 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #ededed;
+}
+.ship-info{
+    display: flex;
+    justify-content: space-between;
+}
+.card-info{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-link{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+.mod-trig{
+    cursor: pointer;
+}
+.order-img{
+    height: 110px;
+    width: 110px;
+}
+.order-review-txt{
+    font-size: .9em;
+}
+.price-counter{
+    width: 50px;
+    outline: none;
+}
+@media only screen and (max-width: 768px){
+    .modal-link{
+        justify-content: flex-start;
+        padding-left: 2%;
+    }
+    .order-text-det{
+        padding: 0 !important;
+    }
+}
