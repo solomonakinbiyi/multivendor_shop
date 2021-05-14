@@ -25,16 +25,15 @@ body{
 .link:hover{
     color: black;
 }
-.order-switch{
-    font-size: .8em;
-    text-align: center;
+.btn-custom{
+    background: orange;
+    color: white;
+    transition: .3s;
 }
-.order-switch:nth-child(2){
-    border-bottom: 2px solid orange;
-    color: orange;
-}
-.order-switch:nth-child(1):hover{
-    border-bottom: 2px solid #acacac;
+.btn-custom:hover{
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 5px rgba(255, 166, 0, 0.363);
 }
 .see-detail{
     color: orange;
@@ -50,11 +49,6 @@ body{
 }
 .link-contain-active{
     background-color: #ededed;
-}
-.feed-back{
-    border: none;
-    background: transparent;
-    color: orange;
 }
 @media only screen and (max-width: 990px){
     .turn-off{

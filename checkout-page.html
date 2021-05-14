@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/checkout-page.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header class="header">
+            <div>
+                <a class="navbar-brand" href="#">LOGO</a>
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                      <a class="link-child" href="#"><i class="bi-person"></i><span class="link-off"> Login</span></a>
+                    </li>
+                    <li>
+                        <a class="link-child" href="#"><i class="bi-question-circle"></i><span class="link-off"> New To Shop</span></a>
+                    </li>
+                    <li>
+                        <a class="link-child" href="#"><i class="bi-cart3"></i><span class="link-off"> Cart</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </header>
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-lg-8 pt-2 p-4">
+                    <div class="shadow-sm row mb-2 bg-white p-3 rounded ship-info">
+                        <div class="col-lg-5 col-md-6">
+                            <h4>Shipping Information</h4>
+                            <p>Name and Number</p>
+                            <p>Address</p>
+                        </div>
+
+                        <!-- Modal text -->
+                        <div class="col-lg-4 col-md-6 modal-link">
+
+                            <!-- Button trigger modal -->
+                            <p class="mod-trig" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new address</p>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Add Address</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Address form</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Modal -->
+                        </div>
+                        <!-- /Modal text -->
+                    </div>
+                    <div class="shadow-sm row mb-2 bg-white p-3 rounded card-info">
+                        <div class="col-lg-5 col-md-6">
+                            <h4>Payment Methods</h4>
+                            <p>Card Number</p>
+                        </div>
+
+                        <!-- Modal text -->
+                        <div class="col-lg-4 col-md-6 modal-link">
+
+                            <!-- Button trigger modal -->
+                            <p class="mod-trig" data-bs-toggle="modal" data-bs-target="#exampleModal2">Change</p>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                            <p>Est enim non pariatur in.</p>
+                                            <p>Est enim non pariatur in.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Modal -->
+                        </div>
+                        <!-- /Modal text -->
+                    </div>
+                    <div class="row p-4 bg-white shadow-sm rounded">
+                        <div class="p-1 mt-2 bg-white shawdow">
+
+                            <div class="row m-1">
+                                <h5 class="order-review-txt">Orders Review</h5>
+                            </div>
+                            <hr class="m-0 mb-3">
+
+                            <!-- item -->
+                            <div class="row m-1 my-2 p-2 border">
+                                <div class="col-md-2 p-2">
+                                    <img class="order-img" src="/multivendor_shop/images/img.png" alt="">
+                                </div>
+                                <div class="col-md-10 p-4 pt-2 pb-2 order-text-det">
+                                    <div class="row justify-content-between p-2">
+                                        <div class="col-md-8 m-1">
+                                            <h5 class="">Hello</h5>
+                                            <p class="">Buy here and there to be a winner</p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 modal-link">
+                                            <input type="number" name="" class="price-counter " value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /item -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 p-4 pt-2">
+                    <div class="col bg-white p-4 rounded">
+                        <p> .</p>
+                        <p>. </p>
+                        <p> </p>
+                        <p>. </p>
+                        <p>. </p>
+                        <p> .</p>
+                        <p>. </p>
+                        <p> .</p>
+                        <p>. </p>
+                        <p>. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src=""></script>
+    </body>
+</html>
