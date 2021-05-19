@@ -137,7 +137,7 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                     <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
@@ -201,25 +201,143 @@
                                 <div class="p-4 py-2">
                                     <p class="my-2">Cruz Veron</p>
                                     <p class="my-2 text-lighted">CruzVeron@gmail.com</p>
-                                    <button class="p-1 change-password my-3">
+                                    <button class="p-1 change-password my-3" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                         <p class="m-0">CHANGE PASSWORD</p>
                                     </button>
+
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="password" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                                            <label for="floatingInputGrid">Current Password</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="password" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                                            <label for="floatingInputGrid">New Password</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="password" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                                            <label for="floatingInputGrid">Retype New Password﻿</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Modal -->
                                 </div>
                             </div>
 
                             <div class="bg-white p-0 my-acct-card">
                                 <div class="card-header px-3">
                                     <p class="m-0">DELIVERY ADDRESS</p>
-                                    <button class="acct-detail-edit">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delivery Address</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row g-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="Passed in value from DB">
+                                                            <label for="floatingInputGrid">First Name</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="Passed in value from DB">
+                                                            <label for="floatingInputGrid">Last Name</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="tel" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="Passed in value from DB">
+                                                            <label for="floatingInputGrid">Phone Number</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="tel" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                                            <label for="floatingInputGrid">Additional Phone Number</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="">
+                                                            <label for="floatingInputGrid">Address</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2 mt-2">
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                                              <option selected>Please select</option>
+                                                              <option value="1">One</option>
+                                                              <option value="2">Two</option>
+                                                            </select>
+                                                            <label for="floatingSelectGrid">State</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-md">
+                                                          <div class="form-floating">
+                                                            <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                                              <option selected>Please select</option>
+                                                              <option value="1">One</option>
+                                                              <option value="2">Two</option>
+                                                            </select>
+                                                            <label for="floatingSelectGrid">City</label>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Modal -->
                                 </div>
 
                                 <div class="p-4 py-2">
                                     <p class="my-2">Your default shipping address:</p>
                                     <p class="my-2 text-lighted">No default shipping address available.</p>
-                                    <button class="p-1 change-password my-3">
-                                        <p class="m-0">CHANGE PASSWORD</p>
+                                    <button class="p-1 change-password my-3" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                        <p class="m-0">ADD ADDRESS</p>
                                     </button>
                                 </div>
                             </div>
